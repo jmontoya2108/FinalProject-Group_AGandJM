@@ -1,11 +1,10 @@
 # FinalProject-Group_AGandJM
-NLP Final project
-Project Overview
+# Financial News headlines Sentiment Classification
 
+Project Overview
 This project explores how Natural Language Processing (NLP) techniques can automatically classify financial news headlines by sentiment: positive, neutral, or negative.Financial headlines drive market behavior, and capturing their sentiment at scale helps analysts understand trends and investor reactions.
 
 This work compares:
-
 A classical NLP pipeline using TF-IDF + Logistic Regression
 A Transformer-based model using fine-tuned DistilBERT
 The final model is deployed using Streamlit to allow real-time sentiment prediction.
