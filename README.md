@@ -86,4 +86,8 @@ Model + tokenizer loaded using save_pretrained()
 
 The fine-tuned DistilBERT model offered a substantial improvement over the TF-IDF baseline, largely because it captures the contextual cues that define sentiment in financial language. While negative and neutral headlines were modeled well, positive sentiment remained the most difficult category due to its subtle and infrequent expression. The embedding analysis confirmed that the Transformer learned meaningful structure in the headline space, and the Streamlit deployment showed how the model can be used interactively for real-time sentiment exploration.
 
+Steps to Run
+
+We conducted our experiments in two phases. First, we worked with a sampled subset of the dataset, applying our custom preprocessing pipeline (see preprocessing.py) and training initial models using the workflow in model.py. Based on presentation feedback, we then expanded our work to the full 1.8M-row dataset, where we implemented and evaluated multiple models—including Logistic Regression, LSTM, DistilBERT, FinBERT, and a baseline classifier—using the notebooks final-project2.ipynb, preprocessing_EDA1.py, and preprocessing_EDA2.py
+
 
