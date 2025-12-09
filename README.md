@@ -2,6 +2,7 @@
 # Financial News headlines Sentiment Classification
 
 Project Overview
+
 This project explores how Natural Language Processing (NLP) techniques can automatically classify financial news headlines by sentiment: positive, neutral, or negative.Financial headlines drive market behavior, and capturing their sentiment at scale helps analysts understand trends and investor reactions.
 
 This work compares:
@@ -39,6 +40,7 @@ TF-IDF vectorization (1–2 n-grams)
 Logistic Regression with balanced class weights
 
 Transformer Model
+
 DistilBERT Encoder → Dropout → Linear Classifier → Softmax
 Fine-tuned on labeled financial headlines
 Optimizer: AdamW
@@ -49,6 +51,7 @@ LR scheduler with warm-up
 A Streamlit front-end loads the saved model for real-time inference.
 
 Results
+
 Baseline (TF-IDF + Logistic Regression)
 Accuracy: 0.80
 Macro-F1: 0.746
@@ -72,7 +75,8 @@ Negative → Neutral (sentiment implied indirectly)
 Positive → Negative (optimism often subtle in finance)
 
 Streamlit Deployment
-A simple Streamlit interface allows users to:
+
+A simple Streamlit demo app allows users to:
 Type any financial headline
 Receive real-time sentiment prediction
 See probability scores for each class
