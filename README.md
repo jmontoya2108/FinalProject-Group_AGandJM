@@ -2,6 +2,7 @@
 # Financial News headlines Sentiment Classification
 
 Project Overview
+
 This project explores how Natural Language Processing (NLP) techniques can automatically classify financial news headlines by sentiment: positive, neutral, or negative.Financial headlines drive market behavior, and capturing their sentiment at scale helps analysts understand trends and investor reactions.
 
 This work compares:
@@ -39,6 +40,7 @@ TF-IDF vectorization (1–2 n-grams)
 Logistic Regression with balanced class weights
 
 Transformer Model
+
 DistilBERT Encoder → Dropout → Linear Classifier → Softmax
 Fine-tuned on labeled financial headlines
 Optimizer: AdamW
@@ -49,6 +51,7 @@ LR scheduler with warm-up
 A Streamlit front-end loads the saved model for real-time inference.
 
 Results
+
 Baseline (TF-IDF + Logistic Regression)
 Accuracy: 0.80
 Macro-F1: 0.746
@@ -72,7 +75,8 @@ Negative → Neutral (sentiment implied indirectly)
 Positive → Negative (optimism often subtle in finance)
 
 Streamlit Deployment
-A simple Streamlit interface allows users to:
+
+A simple Streamlit demo app allows users to:
 Type any financial headline
 Receive real-time sentiment prediction
 See probability scores for each class
@@ -81,5 +85,9 @@ Model + tokenizer loaded using save_pretrained()
 <img width="940" height="476" alt="image" src="https://github.com/user-attachments/assets/79ee52e7-ba23-4e2d-a37f-1c59d7a07c08" />
 
 The fine-tuned DistilBERT model offered a substantial improvement over the TF-IDF baseline, largely because it captures the contextual cues that define sentiment in financial language. While negative and neutral headlines were modeled well, positive sentiment remained the most difficult category due to its subtle and infrequent expression. The embedding analysis confirmed that the Transformer learned meaningful structure in the headline space, and the Streamlit deployment showed how the model can be used interactively for real-time sentiment exploration.
+
+
+We conducted our experiments in two phases. In the first phase, we worked with a sampled subset of the dataset, applying our custom preprocessing pipeline (preprocessing.py) and training initial models using the workflow in model.py. We also built an interactive Streamlit demo (app.py) to showcase model predictions and insights.
+Based on presentation feedback, we then expanded our work to the full 1.8M-row dataset, where we implemented and evaluated multiple models, including logistic regression, LSTM, DistilBERT, FinBERT, and a baseline classifier, using the notebooks final-project2.ipynb, preprocessing_EDA1.py, and preprocessing_EDA2.py.
 
 
